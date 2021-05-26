@@ -34,6 +34,5 @@
 		android:layout_height="wrap_content"
 		android:text="Click to display a detailed progress dialog"
 		android:onClick="onClick3" />
-	
-	
+
 </LinearLayout>

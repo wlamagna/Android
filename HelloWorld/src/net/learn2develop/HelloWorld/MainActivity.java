@@ -1,6 +1,9 @@
 package net.learn2develop.HelloWorld;
-import android.app.Activity;
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
+import android.app.Activity;
 import android.util.Log;
 import android.view.Window;
 import android.app.AlertDialog;
@@ -9,24 +12,31 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Toast;
+import android.location.Address;
+import android.location.Geocoder;
+
+
 
 
 public class MainActivity extends Activity {
+
 	String tag = "Lifecycle";
 	CharSequence[] items = { "Google", "Apple", "Microsoft" };
 	boolean[] itemsChecked = new boolean [items.length];
 	ProgressDialog progressDialog;
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        Log.d(tag, "In the onCreate() event");
     }
 
+    
     public void onStart()
     {
     	super.onStart();
@@ -61,7 +71,9 @@ public class MainActivity extends Activity {
     }
 
     public void onClick(View v) {
-    	showDialog(0);
+    	//-- showDialog(0);
+    	//-- To show GPS coords
+    	showDialog(2);
     }
 
     public void onClick2(View v) {
@@ -84,7 +96,6 @@ public class MainActivity extends Activity {
     
     
     public void onClick3(View v) {
-   	
     	showDialog(1);
     	progressDialog.setProgress(0);
     	new Thread(new Runnable(){
@@ -104,7 +115,6 @@ public class MainActivity extends Activity {
     	}).start();
     }
 
-    
     @Override
     protected Dialog onCreateDialog(int id) {
     	switch (id) {
@@ -163,7 +173,17 @@ public class MainActivity extends Activity {
 	    				}
 	    	});
 	    	return progressDialog;
+	    case 2:
+
+	    	//--AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	Builder builder2 = new AlertDialog.Builder(this);
+	        builder2.setTitle("Coordenadas Winsurf");
+	        builder2.setMessage("Estas son las coordenadas:");
+	        builder2.setPositiveButton("Aceptar", null);       
+	        return builder2.create();
     	}
     	return null;
     }
+    
+
 }

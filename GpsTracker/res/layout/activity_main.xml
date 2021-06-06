@@ -4,60 +4,72 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <Button
-        android:id="@+id/BtnDesactivar"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="88dp"
-        android:onClick="onClick2"
-        android:text="Desactivar" />
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/BtnActualizar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/BtnDesactivar"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="34dp"
-        android:onClick="onClick"
-        android:text="Activar" />
+        <TextView
+            android:id="@+id/LblPosLongitud"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="long:" />
 
-    <TextView
-        android:id="@+id/LblPosPrecision"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/BtnActualizar"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="59dp"
-        android:text="precision:" />
+        <TextView
+            android:id="@+id/LblPosLatitud"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LblEstado"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="18dp"
+            android:text="lat:" />
 
-    <TextView
-        android:id="@+id/LblEstado"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/LblPosPrecision"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="26dp"
-        android:text="Estado:" />
+        <TextView
+            android:id="@+id/LblPosPrecision"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="precision:" />
 
-    <TextView
-        android:id="@+id/LblPosLatitud"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/LblEstado"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="26dp"
-        android:text="latitude:" />
+        <TextView
+            android:id="@+id/lblDatos"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/BtnActualizar"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="24dp"
+            android:text="Datos:" />
 
-    <TextView
-        android:id="@+id/LblPosLongitud"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/LblPosLatitud"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="22dp"
-        android:text="longitude:" />
+        <Button
+            android:id="@+id/BtnActualizar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/BtnDesactivar"
+            android:layout_alignParentLeft="true"
+            android:onClick="onClick"
+            android:text="Activar" />
+
+        <Button
+            android:id="@+id/BtnDesactivar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="27dp"
+            android:onClick="onClick_salir"
+            android:text="Salir" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:src="@drawable/windicon" />
+
+    </LinearLayout>
 
 </RelativeLayout>
